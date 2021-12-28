@@ -6,8 +6,8 @@ import retrofit2.http.Path
 interface ZeldaApi {
 
     @GET("api/v2/category/monsters")
-    suspend fun getMonsters(): List<MonstersDto>
+    suspend fun getMonsters(): List<MonsterDetailDto>
 
     @GET("api/v2/entry/{monsterId}")
-    suspend fun getMonsters(@Path("monsterId") monsterID: Int): List<MonstersDto>
+    suspend fun getMonsterDetail(@Path("monsterId") monsterID: Int): MonsterDetailDto
 }
