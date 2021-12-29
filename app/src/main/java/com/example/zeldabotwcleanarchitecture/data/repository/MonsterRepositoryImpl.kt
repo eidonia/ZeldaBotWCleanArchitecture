@@ -1,7 +1,7 @@
 package com.example.zeldabotwcleanarchitecture.data.repository
 
-import com.example.zeldabotwcleanarchitecture.data.dto.MonsterDetailDto
-import com.example.zeldabotwcleanarchitecture.data.dto.ZeldaApi
+import com.example.zeldabotwcleanarchitecture.data.remote.MonsterDetailDto
+import com.example.zeldabotwcleanarchitecture.data.remote.ZeldaApi
 import com.example.zeldabotwcleanarchitecture.domain.repository.MonsterRepository
 import javax.inject.Inject
 

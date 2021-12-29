@@ -1,7 +1,7 @@
 package com.example.zeldabotwcleanarchitecture.domain.uses_cases.get_monsters
 
 import com.example.zeldabotwcleanarchitecture.common.Resource
-import com.example.zeldabotwcleanarchitecture.data.dto.toMonsterDetail
+import com.example.zeldabotwcleanarchitecture.data.remote.toMonsterDetail
 import com.example.zeldabotwcleanarchitecture.domain.model.MonsterDetail
 import com.example.zeldabotwcleanarchitecture.domain.repository.MonsterRepository
 import kotlinx.coroutines.flow.Flow
@@ -21,9 +21,9 @@ class GetMonstersUseCase @Inject constructor(private val repo: MonsterRepository
             emit(Resource.Success(monsters))
 
         }catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occured"))
+            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
         }catch (e: IOException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occured"))
+            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
         }
     }
 }

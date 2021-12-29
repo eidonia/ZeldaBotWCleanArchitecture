@@ -1,4 +1,4 @@
-package com.example.zeldabotwcleanarchitecture.data.dto
+package com.example.zeldabotwcleanarchitecture.data.remote
 
 import com.example.zeldabotwcleanarchitecture.domain.model.MonsterDetail
 
