@@ -1,10 +1,10 @@
-package com.example.zeldabotwcleanarchitecture.data.remote
+package com.example.zeldabotwcleanarchitecture.data.remote.dto.list_monsters
 
 import com.example.zeldabotwcleanarchitecture.domain.model.MonsterDetail
 
-data class MonsterDetailDto(
+data class Data(
     val category: String,
-    val common_locations: Any,
+    val common_locations: List<String>,
     val description: String,
     val drops: List<String>,
     val id: Int,
@@ -12,7 +12,7 @@ data class MonsterDetailDto(
     val name: String
 )
 
-fun MonsterDetailDto.toMonsterDetail(): MonsterDetail =
+fun Data.toMonsterDetail(): MonsterDetail =
     MonsterDetail(
         category = category,
         description = description,
@@ -20,4 +20,3 @@ fun MonsterDetailDto.toMonsterDetail(): MonsterDetail =
         image = image,
         name = name
     )
-

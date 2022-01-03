@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/monstersListFragment">
+
+    <fragment
+        android:id="@+id/monstersListFragment"
+        android:name="com.example.zeldabotwcleanarchitecture.ui.monster_list.MonstersListFragment"
+        android:label="fragment_monsters_list"
+        tools:layout="@layout/fragment_monsters_list" >
+        <action
+            android:id="@+id/action_monstersListFragment_to_monsterDetailFragment"
+            app:destination="@id/monsterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/monsterDetailFragment"
+        android:name="com.example.zeldabotwcleanarchitecture.ui.monster_detail.MonsterDetailFragment"
+        android:label="fragment_monster_detail"
+        tools:layout="@layout/fragment_monster_detail" />
+</navigation>

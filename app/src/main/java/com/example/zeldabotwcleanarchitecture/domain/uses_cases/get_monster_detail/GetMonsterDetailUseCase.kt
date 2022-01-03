@@ -1,7 +1,7 @@
 package com.example.zeldabotwcleanarchitecture.domain.uses_cases.get_monster_detail
 
 import com.example.zeldabotwcleanarchitecture.common.Resource
-import com.example.zeldabotwcleanarchitecture.data.remote.toMonsterDetail
+import com.example.zeldabotwcleanarchitecture.data.remote.dto.detail_monster.toMonsterDetail
 import com.example.zeldabotwcleanarchitecture.domain.model.MonsterDetail
 import com.example.zeldabotwcleanarchitecture.domain.repository.MonsterRepository
 import kotlinx.coroutines.flow.Flow
@@ -15,8 +15,9 @@ class GetMonsterDetailUseCase @Inject constructor(private val repo: MonsterRepos
     operator fun invoke(monsterId: Int): Flow<Resource<MonsterDetail>> = flow {
         try {
             emit(Resource.Loading())
-            val monsters = repo.getMonsterDetail(monsterId).toMonsterDetail()
-            emit(Resource.Success(monsters))
+            val data = repo.getMonsterDetail(monsterId).data
+            val monster = data.toMonsterDetail()
+            emit(Resource.Success(monster))
 
         }catch (e: HttpException) {
             emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
